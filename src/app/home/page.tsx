@@ -1,7 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import FocusLock from 'react-focus-lock';
 
 export default function Home() {
     const router = useRouter();
@@ -25,18 +24,16 @@ export default function Home() {
                     </button>
                 </div>
                 <div className="flex-1 bg-main p-4">
-                    <FocusLock autoFocus={true}>
-                        <input
-                            autoFocus
-                            type="text"
-                            inputMode="none"
-                            className="rounded text-gray-700"
-                            maxLength={10}
-                            readOnly={readonly}
-                            onFocus={() => setReadonly(false)}
-                            onBlur={() => setReadonly(true)}
-                        />
-                    </FocusLock>
+                    <input
+                        autoFocus
+                        type="text"
+                        inputMode="none"
+                        className="rounded text-gray-700"
+                        maxLength={10}
+                        readOnly={readonly}
+                        onFocus={() => setReadonly(false)}
+                        onBlur={() => setReadonly(true)}
+                    />
                 </div>
             </div>
         </div>

@@ -1,5 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import FocusLock from 'react-focus-lock';
 
 export default function Home() {
     const router = useRouter();
@@ -7,6 +9,7 @@ export default function Home() {
     const handleLogoutClick = () => {
         router.push('/');
     };
+    const [readonly, setReadonly] = useState(false);
 
     return (
         <div className="flex h-screen">
@@ -22,7 +25,18 @@ export default function Home() {
                     </button>
                 </div>
                 <div className="flex-1 bg-main p-4">
-                    <input className="rounded text-gray-700" maxLength={10} type="text" />
+                    <FocusLock autoFocus={true}>
+                        <input
+                            autoFocus
+                            type="text"
+                            inputMode="none"
+                            className="rounded text-gray-700"
+                            maxLength={10}
+                            readOnly={readonly}
+                            onFocus={() => setReadonly(false)}
+                            onBlur={() => setReadonly(true)}
+                        />
+                    </FocusLock>
                 </div>
             </div>
         </div>

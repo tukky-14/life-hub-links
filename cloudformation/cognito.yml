@@ -1,0 +1,45 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Sample CloudFormation Template to create a Cognito User Pool
+
+Resources:
+    # ユーザープール
+    MyCognitoUserPool:
+        Type: AWS::Cognito::UserPool
+        Properties:
+            UserPoolName: MyUserPool
+            Schema:
+                - Name: email
+                  Required: true
+                  Mutable: false
+                  AttributeDataType: String
+            Policies:
+                PasswordPolicy:
+                    MinimumLength: 6
+                    RequireUppercase: false
+                    RequireLowercase: false
+                    RequireNumbers: false
+                    RequireSymbols: false
+            AutoVerifiedAttributes:
+                - email
+
+    # ユーザープールクライアント
+    MyCognitoUserPoolClient:
+        Type: AWS::Cognito::UserPoolClient
+        Properties:
+            ClientName: MyUserPoolClient
+            UserPoolId:
+                Ref: MyCognitoUserPool
+            ExplicitAuthFlows:
+                - ALLOW_USER_SRP_AUTH
+                - ALLOW_REFRESH_TOKEN_AUTH
+            GenerateSecret: false
+
+Outputs:
+    UserPoolId:
+        Description: The ID of the Cognito User Pool
+        Value:
+            Ref: MyCognitoUserPool
+    UserPoolClientId:
+        Description: The ID of the User Pool Client
+        Value:
+            Ref: MyCognitoUserPoolClient

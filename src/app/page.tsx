@@ -1,14 +1,32 @@
 'use client';
 import { useRouter } from 'next/navigation';
+import { signIn, type SignInInput } from 'aws-amplify/auth';
 
 export default function Login() {
     const router = useRouter();
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        // ここでログイン処理を実装 (今回はスキップ)
-        // ログイン成功後、/homeにリダイレクト
-        router.push('/home');
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        try {
+            e.preventDefault();
+
+            // 型アサーションを使用して、value プロパティへのアクセスを安全に行う
+            const userIdInput = e.currentTarget.elements.namedItem('userId') as HTMLInputElement;
+            const passwordInput = e.currentTarget.elements.namedItem(
+                'password'
+            ) as HTMLInputElement;
+
+            if (userIdInput && passwordInput) {
+                const username = userIdInput.value;
+                const password = userIdInput.value;
+
+                const { isSignedIn, nextStep } = await signIn({ username, password });
+                console.log('isSignedIn:', isSignedIn);
+                console.log('nextStep:', nextStep);
+                router.push('/home');
+            }
+        } catch (error) {
+            console.log('error signing in', error);
+        }
     };
 
     return (
@@ -23,6 +41,7 @@ export default function Login() {
                         <input
                             type="text"
                             id="userId"
+                            name="userId"
                             className="mt-1 block w-full rounded-md border-gray-300 p-2 text-gray-700 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                             required
                         />
@@ -37,6 +56,7 @@ export default function Login() {
                         <input
                             type="password"
                             id="password"
+                            name="password"
                             className="mt-1 block w-full rounded-md border-gray-300 p-2 text-gray-700 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                             required
                         />

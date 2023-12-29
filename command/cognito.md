@@ -4,8 +4,11 @@
     aws cognito-idp admin-set-user-password \
     --user-pool-id ap-northeast-1_RwFelIqPc \
     --username eiji \
-    --password 999999
+    --password 999999 \
+    --permanent
     ```
+
+    ※permanentオプションをつけない場合、ステータスは"パスワードを強制的に変更"になる
 
 <br/>
 

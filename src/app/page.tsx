@@ -1,6 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { signIn } from '@/hooks/useAuth';
+import { currentAuthenticatedUser, currentSession, signIn } from '@/hooks/useAuth';
 
 export default function Login() {
     const router = useRouter();
@@ -20,6 +20,8 @@ export default function Login() {
                 const password = passwordInput.value;
 
                 const { isSignedIn, nextStep } = await signIn(username, password);
+                await currentSession();
+                await currentAuthenticatedUser();
                 console.log('isSignedIn:', isSignedIn);
                 console.log('nextStep:', nextStep);
                 router.push('/home');

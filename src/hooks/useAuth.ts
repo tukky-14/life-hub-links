@@ -1,6 +1,9 @@
 import { signIn as signInAmplify, signOut as signOutAmplify } from 'aws-amplify/auth';
 import { Amplify } from 'aws-amplify';
 import { currentConfig } from '../config/aws';
+import { fetchAuthSession } from 'aws-amplify/auth';
+import { getCurrentUser } from 'aws-amplify/auth';
+
 Amplify.configure(currentConfig);
 
 export function signIn(username: string, password: string) {
@@ -9,6 +12,27 @@ export function signIn(username: string, password: string) {
 
 export function signOut() {
     return signOutAmplify();
+}
+
+export async function currentSession() {
+    try {
+        const { accessToken, idToken } = (await fetchAuthSession()).tokens ?? {};
+        console.log(`The accessToken: ${accessToken}`);
+        console.log(`The idToken: ${idToken}`);
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export async function currentAuthenticatedUser() {
+    try {
+        const { username, userId, signInDetails } = await getCurrentUser();
+        console.log(`The username: ${username}`);
+        console.log(`The userId: ${userId}`);
+        console.log(`The signInDetails: ${signInDetails}`);
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 export function useAuth() {

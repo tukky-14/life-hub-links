@@ -1,14 +1,48 @@
--   Cognitoのユーザパスワード変更
+-   ユーザ作成
+
+    ```
+    aws cognito-idp admin-create-user \
+    --user-pool-id ap-northeast-1_RwFelIqPc \
+    --username tukky \
+    --user-attributes Name=email,Value=bigoonage0104@gmail.com Name=email_verified,Value=True \
+    --temporary-password 999999
+    ```
+
+    ※Name=email_verified,Value=Trueをつけることでメールを検証済みにしている
+
+<br/>
+
+-   ユーザを確認済みにする
+
+    ```
+    aws cognito-idp admin-confirm-sign-up \
+    --user-pool-id ap-northeast-1_RwFelIqPc \
+    --username tukky
+    ```
+
+<br/>
+
+-   ユーザパスワード変更
 
     ```
     aws cognito-idp admin-set-user-password \
     --user-pool-id ap-northeast-1_RwFelIqPc \
-    --username eiji \
+    --username tukky \
     --password 999999 \
     --permanent
     ```
 
     ※permanentオプションをつけない場合、ステータスは"パスワードを強制的に変更"になる
+
+<br/>
+
+-   ユーザ削除
+
+    ```
+    aws cognito-idp admin-delete-user \
+    --user-pool-id ap-northeast-1_RwFelIqPc \
+    --username tukky
+    ```
 
 <br/>
 

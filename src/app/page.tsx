@@ -21,7 +21,7 @@ export default function Login() {
 
             if (userIdInput && passwordInput) {
                 const username = userIdInput.value;
-                const password = userIdInput.value;
+                const password = passwordInput.value;
 
                 const { isSignedIn, nextStep } = await signIn({ username, password });
                 console.log('isSignedIn:', isSignedIn);

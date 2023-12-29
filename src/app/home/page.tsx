@@ -18,7 +18,7 @@ export default function Home() {
                     <h3>ヘッダー</h3>
                     <button
                         onClick={handleLogoutClick}
-                        className="rounded bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+                        className="rounded bg-indigo-500 px-4 py-2 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
                     >
                         ログアウト
                     </button>

@@ -36,7 +36,7 @@ export default function Login() {
     return (
         <div className="flex h-screen items-center justify-center bg-gray-200">
             <div className="w-full max-w-lg rounded bg-white p-6 shadow-md">
-                <h1 className="mb-4 text-center text-lg font-bold text-indigo-600">ログイン</h1>
+                <h1 className="mb-4 text-center text-lg font-bold text-indigo-500">ログイン</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700">
@@ -68,7 +68,7 @@ export default function Login() {
                     <div className="flex justify-center">
                         <button
                             type="submit"
-                            className="rounded bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+                            className="rounded bg-indigo-500 px-4 py-2 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
                         >
                             ログイン
                         </button>

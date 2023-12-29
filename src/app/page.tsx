@@ -2,6 +2,10 @@
 import { useRouter } from 'next/navigation';
 import { signIn, type SignInInput } from 'aws-amplify/auth';
 
+import { Amplify } from 'aws-amplify';
+import { currentConfig } from '../config/aws';
+Amplify.configure(currentConfig);
+
 export default function Login() {
     const router = useRouter();
 

@@ -1,10 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { signIn, type SignInInput } from 'aws-amplify/auth';
-
-import { Amplify } from 'aws-amplify';
-import { currentConfig } from '../config/aws';
-Amplify.configure(currentConfig);
+import { signIn } from '@/hooks/useAuth';
 
 export default function Login() {
     const router = useRouter();
@@ -23,7 +19,7 @@ export default function Login() {
                 const username = userIdInput.value;
                 const password = passwordInput.value;
 
-                const { isSignedIn, nextStep } = await signIn({ username, password });
+                const { isSignedIn, nextStep } = await signIn(username, password);
                 console.log('isSignedIn:', isSignedIn);
                 console.log('nextStep:', nextStep);
                 router.push('/home');

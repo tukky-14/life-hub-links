@@ -1,4 +1,8 @@
-import { signIn as signInAmplify, signOut as signOutAmplify } from 'aws-amplify/auth';
+import {
+    signIn as signInAmplify,
+    signOut as signOutAmplify,
+    signUp as signUpAmplify,
+} from 'aws-amplify/auth';
 import { Amplify } from 'aws-amplify';
 import { currentConfig } from '../config/aws';
 import { fetchAuthSession } from 'aws-amplify/auth';
@@ -30,6 +34,23 @@ export async function currentAuthenticatedUser() {
         console.log(`The username: ${username}`);
         console.log(`The userId: ${userId}`);
         console.log(`The signInDetails: ${signInDetails}`);
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export async function signUp(username: string, password: string, email: string) {
+    try {
+        const result = await signUpAmplify({
+            username,
+            password,
+            options: {
+                userAttributes: {
+                    email,
+                },
+            },
+        });
+        console.log(result);
     } catch (err) {
         console.log(err);
     }

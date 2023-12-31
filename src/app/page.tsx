@@ -3,6 +3,7 @@ import { useRouter } from 'next/navigation';
 import { currentAuthenticatedUser, currentSession, signIn } from '@/hooks/useAuth';
 import Link from 'next/link';
 import Input from '@/components/Input';
+import Button from '@/components/Button';
 
 export default function Login() {
     const router = useRouter();
@@ -54,13 +55,8 @@ export default function Login() {
                         required={true}
                         style="mb-6"
                     />
-                    <div className="flex justify-center">
-                        <button
-                            type="submit"
-                            className="rounded bg-indigo-500 px-4 py-2 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
-                        >
-                            ログイン
-                        </button>
+                    <div className="text-center">
+                        <Button type="submit" id="login" text="ログイン" />
                     </div>
                 </form>
                 <div className="pb-2 pt-6 text-center text-indigo-500">

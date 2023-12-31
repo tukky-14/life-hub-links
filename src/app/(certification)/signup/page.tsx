@@ -3,6 +3,7 @@ import { useRouter } from 'next/navigation';
 import { signUp } from '@/hooks/useAuth';
 import Link from 'next/link';
 import Input from '@/components/Input';
+import Button from '@/components/Button';
 
 export default function Register() {
     const router = useRouter();
@@ -61,13 +62,8 @@ export default function Register() {
                         required={true}
                         style="mb-6"
                     />
-                    <div className="flex justify-center">
-                        <button
-                            type="submit"
-                            className="rounded bg-indigo-500 px-4 py-2 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
-                        >
-                            登録
-                        </button>
+                    <div className="text-center">
+                        <Button type="submit" id="login" text="登録" />
                     </div>
                 </form>
                 <div className="pb-2 pt-6 text-center text-indigo-500">

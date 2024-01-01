@@ -1,12 +1,14 @@
 'use client';
 import Button from '@/components/Button';
+import { signOut } from '@/hooks/useAuth';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export default function Home() {
     const router = useRouter();
 
-    const handleLogoutClick = () => {
+    const handleLogoutClick = async () => {
+        await signOut();
         router.push('/');
     };
     const [readonly, setReadonly] = useState(false);

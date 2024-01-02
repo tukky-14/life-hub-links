@@ -1,32 +1,17 @@
 'use client';
-import Button from '@/components/Button';
-import { signOut } from '@/hooks/useAuth';
-import { useRouter } from 'next/navigation';
+import Header from '@/components/Header';
+import Sidebar from '@/components/Sidebar';
 import { useState } from 'react';
 
 export default function Home() {
-    const router = useRouter();
-
-    const handleLogoutClick = async () => {
-        await signOut();
-        router.push('/');
-    };
     const [readonly, setReadonly] = useState(false);
 
     return (
         <div className="flex h-screen">
-            <div className="hidden w-64 bg-sidebar p-4 sm:block">サイドバー</div>
+            <Sidebar />
             <div className="flex flex-1 flex-col">
-                <div className="flex h-16 items-center justify-between bg-header p-4">
-                    <h3>ヘッダー</h3>
-                    <Button
-                        type="button"
-                        id="logout"
-                        text="ログアウト"
-                        onClick={handleLogoutClick}
-                    />
-                </div>
-                <div className="flex-1 bg-main p-4">
+                <Header />
+                <main className="flex-1 bg-main p-4">
                     <input
                         autoFocus
                         type="text"
@@ -37,7 +22,7 @@ export default function Home() {
                         onFocus={() => setReadonly(false)}
                         onBlur={() => setReadonly(true)}
                     />
-                </div>
+                </main>
             </div>
         </div>
     );

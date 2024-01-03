@@ -1,6 +1,6 @@
 import { signOut } from '@/hooks/useAuth';
 import Button from './Button';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 const Header = () => {
     const router = useRouter();

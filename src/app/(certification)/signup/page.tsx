@@ -34,42 +34,40 @@ export default function Register() {
     };
 
     return (
-        <div className="flex h-screen items-center justify-center bg-gray-200 text-gray-700">
-            <div className="w-full max-w-lg rounded bg-white p-6 shadow-md">
-                <h1 className="mb-4 text-center text-lg font-bold text-indigo-500">ユーザ登録</h1>
-                <form onSubmit={handleSubmit}>
-                    <Input
-                        type="text"
-                        id="username"
-                        name="username"
-                        label="ユーザ名"
-                        required={true}
-                        style="mb-4"
-                    />
-                    <Input
-                        type="email"
-                        id="email"
-                        name="email"
-                        label="メールアドレス"
-                        required={true}
-                        style="mb-4"
-                    />
-                    <Input
-                        type="password"
-                        id="password"
-                        name="password"
-                        label="パスワード"
-                        required={true}
-                        style="mb-6"
-                    />
-                    <div className="text-center">
-                        <Button type="submit" id="login" text="登録" />
-                    </div>
-                </form>
-                <div className="pb-2 pt-6 text-center text-indigo-500">
-                    <Link href="/">戻る</Link>
+        <>
+            <h1 className="mb-4 text-center text-lg font-bold text-indigo-500">ユーザ登録</h1>
+            <form onSubmit={handleSubmit}>
+                <Input
+                    type="text"
+                    id="username"
+                    name="username"
+                    label="ユーザ名"
+                    required={true}
+                    style="mb-4"
+                />
+                <Input
+                    type="email"
+                    id="email"
+                    name="email"
+                    label="メールアドレス"
+                    required={true}
+                    style="mb-4"
+                />
+                <Input
+                    type="password"
+                    id="password"
+                    name="password"
+                    label="パスワード"
+                    required={true}
+                    style="mb-6"
+                />
+                <div className="text-center">
+                    <Button type="submit" id="login" text="登録" />
                 </div>
+            </form>
+            <div className="pb-2 pt-6 text-center text-indigo-500">
+                <Link href="/signin">戻る</Link>
             </div>
-        </div>
+        </>
     );
 }

@@ -35,34 +35,32 @@ export default function Login() {
     };
 
     return (
-        <div className="flex h-screen items-center justify-center bg-gray-200 text-gray-700">
-            <div className="w-full max-w-lg rounded bg-white p-6 shadow-md">
-                <h1 className="mb-4 text-center text-lg font-bold text-indigo-500">ログイン</h1>
-                <form onSubmit={handleSubmit}>
-                    <Input
-                        type="text"
-                        id="userId"
-                        name="userId"
-                        label="ユーザID"
-                        required={true}
-                        style="mb-4"
-                    />
-                    <Input
-                        type="password"
-                        id="password"
-                        name="password"
-                        label="パスワード"
-                        required={true}
-                        style="mb-6"
-                    />
-                    <div className="text-center">
-                        <Button type="submit" id="login" text="ログイン" />
-                    </div>
-                </form>
-                <div className="pb-2 pt-6 text-center text-indigo-500">
-                    <Link href="/signup">ユーザ登録</Link>
+        <>
+            <h1 className="mb-4 text-center text-lg font-bold text-indigo-500">ログイン</h1>
+            <form onSubmit={handleSubmit}>
+                <Input
+                    type="text"
+                    id="userId"
+                    name="userId"
+                    label="ユーザID"
+                    required={true}
+                    style="mb-4"
+                />
+                <Input
+                    type="password"
+                    id="password"
+                    name="password"
+                    label="パスワード"
+                    required={true}
+                    style="mb-6"
+                />
+                <div className="text-center">
+                    <Button type="submit" id="login" text="ログイン" />
                 </div>
+            </form>
+            <div className="pb-2 pt-6 text-center text-indigo-500">
+                <Link href="/signup">ユーザ登録</Link>
             </div>
-        </div>
+        </>
     );
 }

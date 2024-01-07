@@ -8,7 +8,7 @@ export default function MainLauout({ children }: { children: React.ReactNode }) 
             <Sidebar />
             <div className="flex flex-1 flex-col">
                 <Header />
-                <main className="flex-1 bg-main p-4">{children}</main>
+                <main className="flex-1 bg-main p-4 text-gray-700">{children}</main>
             </div>
         </div>
     );

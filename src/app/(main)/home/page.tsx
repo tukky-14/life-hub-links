@@ -6,16 +6,7 @@ export default function Home() {
 
     return (
         <>
-            <input
-                autoFocus
-                type="text"
-                inputMode="none"
-                className="rounded text-gray-700"
-                maxLength={10}
-                readOnly={readonly}
-                onFocus={() => setReadonly(false)}
-                onBlur={() => setReadonly(true)}
-            />
+            <div>Home</div>
         </>
     );
 }

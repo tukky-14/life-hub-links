@@ -1,14 +1,7 @@
 'use client';
 
+import { LINKS } from '@/data/sidebar';
 import Link from 'next/link';
-
-const LINKS = [
-    { href: '/house', label: '住居' },
-    { href: '/cleaning', label: '掃除' },
-    { href: '/cook', label: '料理' },
-    { href: '/childcare', label: '育児' },
-    { href: '/money', label: 'お金' },
-];
 
 const Sidebar = () => {
     return (

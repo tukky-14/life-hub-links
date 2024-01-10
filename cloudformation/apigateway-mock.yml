@@ -1,0 +1,59 @@
+# aws cloudformation create-stack --stack-name MyMockApiStack --template-body file://cloudformation/apigateway-mock.yml
+# curl https://0pvyk2n4s6.execute-api.ap-northeast-1.amazonaws.com/test/mockpath
+
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+    MyApi:
+        Type: 'AWS::ApiGateway::RestApi'
+        Properties:
+            Name: 'MyMockApi'
+            Description: 'API with a mock integration'
+
+    MyResource:
+        Type: 'AWS::ApiGateway::Resource'
+        Properties:
+            RestApiId: !Ref MyApi
+            ParentId: !GetAtt 'MyApi.RootResourceId'
+            PathPart: 'mockpath'
+
+    MyMethod:
+        Type: 'AWS::ApiGateway::Method'
+        DependsOn:
+            - MyResource
+        Properties:
+            RestApiId: !Ref MyApi
+            ResourceId: !Ref MyResource
+            HttpMethod: 'GET'
+            AuthorizationType: NONE
+            Integration:
+                Type: MOCK
+                RequestTemplates:
+                    application/json: '{"statusCode": 200}'
+                IntegrationResponses:
+                    - StatusCode: 200
+                      ResponseParameters:
+                          method.response.header.Access-Control-Allow-Origin: "'*'"
+                      ResponseTemplates:
+                          application/json: >
+                              [
+                                {
+                                  "title": "hoge",
+                                  "link": "xxxxx"
+                                },
+                                {
+                                  "title": "fuga",
+                                  "link": "xxxxx"
+                                }
+                              ]
+            MethodResponses:
+                - StatusCode: 200
+                  ResponseParameters:
+                      method.response.header.Access-Control-Allow-Origin: true
+
+    MyDeployment:
+        Type: 'AWS::ApiGateway::Deployment'
+        DependsOn:
+            - MyMethod
+        Properties:
+            StageName: 'test'
+            RestApiId: !Ref MyApi

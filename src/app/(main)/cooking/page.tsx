@@ -1,4 +1,4 @@
-export default function House() {
+export default function Cooking() {
     return (
         <>
             <div></div>

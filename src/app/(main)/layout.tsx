@@ -2,7 +2,7 @@
 import Header from '@/components/Header';
 import Sidebar from '@/components/Sidebar';
 
-export default function MainLauout({ children }: { children: React.ReactNode }) {
+const MainLauout = ({ children }: { children: React.ReactNode }) => {
     return (
         <div className="flex h-screen">
             <Sidebar />
@@ -12,4 +12,6 @@ export default function MainLauout({ children }: { children: React.ReactNode }) 
             </div>
         </div>
     );
-}
+};
+
+export default MainLauout;

@@ -1,7 +1,9 @@
-export default function Cooking() {
+const Cooking = () => {
     return (
         <>
             <div></div>
         </>
     );
-}
+};
+
+export default Cooking;

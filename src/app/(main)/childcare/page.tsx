@@ -1,7 +1,8 @@
-export default function Childcare() {
+const Childcare = () => {
     return (
         <>
             <div></div>
         </>
     );
-}
+};
+export default Childcare;

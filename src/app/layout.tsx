@@ -7,10 +7,12 @@ export const metadata: Metadata = {
     keywords: 'next.js, react, web development',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <html lang="ja">
             <body suppressHydrationWarning={true}>{children}</body>
         </html>
     );
-}
+};
+
+export default RootLayout;

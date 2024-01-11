@@ -3,7 +3,7 @@ import Sidebar from '@/components/Sidebar';
 import Home from './(main)/home/page';
 import Header from '@/components/Header';
 
-export default function LoginHome() {
+const AfterLoginHome = () => {
     return (
         <div className="flex h-screen">
             <Sidebar />
@@ -15,4 +15,6 @@ export default function LoginHome() {
             </div>
         </div>
     );
-}
+};
+
+export default AfterLoginHome;

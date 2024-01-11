@@ -1,7 +1,9 @@
-export default function Money() {
+const Money = () => {
     return (
         <>
             <div></div>
         </>
     );
-}
+};
+
+export default Money;

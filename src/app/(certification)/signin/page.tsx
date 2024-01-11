@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Input from '@/components/Input';
 import Button from '@/components/Button';
 
-export default function Login() {
+const Login = () => {
     const router = useRouter();
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -63,4 +63,6 @@ export default function Login() {
             </div>
         </>
     );
-}
+};
+
+export default Login;

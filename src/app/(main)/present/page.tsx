@@ -1,7 +1,9 @@
-export default function Present() {
+const Present = () => {
     return (
         <>
             <div></div>
         </>
     );
-}
+};
+
+export default Present;

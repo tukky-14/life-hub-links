@@ -1,7 +1,9 @@
-export default function Shopping() {
+const Shopping = () => {
     return (
         <>
             <div></div>
         </>
     );
-}
+};
+
+export default Shopping;

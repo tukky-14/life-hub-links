@@ -16,7 +16,7 @@ const Header = () => {
     };
 
     return (
-        <header className="flex h-16 items-center justify-between bg-header p-4">
+        <header className="flex h-16 items-center justify-between border-b border-gray-300 p-4">
             <h3>{currentLabel}</h3>
             <div className="text-sm italic">{currentProverb}</div>
             <Button type="button" id="logout" text="ログアウト" onClick={handleLogoutClick} />

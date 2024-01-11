@@ -6,9 +6,9 @@ const MainLauout = ({ children }: { children: React.ReactNode }) => {
     return (
         <div className="flex h-screen">
             <Sidebar />
-            <div className="flex flex-1 flex-col">
+            <div className="flex flex-1 flex-col bg-main text-gray-700">
                 <Header />
-                <main className="flex-1 bg-main p-4 text-gray-700">{children}</main>
+                <main className="flex-1 p-4">{children}</main>
             </div>
         </div>
     );

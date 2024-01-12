@@ -1,14 +1,12 @@
 import Button from './Button';
 import { signOut } from '@/hooks/useAuth';
 import { useRouter, usePathname } from 'next/navigation';
-import { LINKS } from '@/data/sidebar';
-import { PROVERBS } from '@/data/proverbs';
+import { SIDEBAR_OPTIONS } from '@/data/sidebar';
 
 const Header = () => {
     const router = useRouter();
     const currentPathname = usePathname();
-    const currentLabel = LINKS.find((link) => link.href === currentPathname)?.label || 'ホーム';
-    const currentProverb = PROVERBS.find((proverb) => proverb.label === currentLabel)?.text || '';
+    const currentOption = SIDEBAR_OPTIONS.find((link) => link.href === currentPathname);
 
     const handleLogoutClick = async () => {
         await signOut();
@@ -17,8 +15,8 @@ const Header = () => {
 
     return (
         <header className="flex h-16 items-center justify-between border-b border-gray-300 p-4">
-            <h3>{currentLabel}</h3>
-            <div className="text-sm italic">{currentProverb}</div>
+            <h3>{currentOption?.label}</h3>
+            <div className="text-sm italic">{currentOption?.proverb}</div>
             <Button type="button" id="logout" text="ログアウト" onClick={handleLogoutClick} />
         </header>
     );

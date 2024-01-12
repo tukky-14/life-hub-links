@@ -1,6 +1,6 @@
 'use client';
 
-import { LINKS } from '@/data/sidebar';
+import { SIDEBAR_OPTIONS } from '@/data/sidebar';
 import Link from 'next/link';
 
 const Sidebar = () => {
@@ -12,15 +12,15 @@ const Sidebar = () => {
                 </Link>
             </h3>
             <div>
-                {LINKS.map((link) => (
+                {SIDEBAR_OPTIONS.map((option) => (
                     <Link
-                        key={link.href}
-                        href={link.href}
+                        key={option.href}
+                        href={option.href}
                         className="block px-4 py-2 hover:bg-gray-600"
                     >
                         <div className="flex items-center gap-1">
-                            {link.icon}
-                            <p>{link.label}</p>
+                            {option.icon}
+                            <p>{option.label}</p>
                         </div>
                     </Link>
                 ))}

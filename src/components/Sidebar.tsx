@@ -7,7 +7,7 @@ const Sidebar = () => {
     return (
         <aside className="hidden w-48 bg-sidebar py-4 sm:block">
             <h3 className="mb-5 px-4 py-1">
-                <Link href="/home" className="">
+                <Link href="/" className="">
                     LifeHub Links
                 </Link>
             </h3>

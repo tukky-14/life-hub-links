@@ -1,4 +1,4 @@
-const Present = () => {
+const Gift = () => {
     return (
         <>
             <div></div>
@@ -6,4 +6,4 @@ const Present = () => {
     );
 };
 
-export default Present;
+export default Gift;

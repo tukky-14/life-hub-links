@@ -18,7 +18,10 @@ const Sidebar = () => {
                         href={link.href}
                         className="block px-4 py-2 hover:bg-gray-600"
                     >
-                        <p>{link.label}</p>
+                        <div className="flex items-center gap-1">
+                            {link.icon}
+                            <p>{link.label}</p>
+                        </div>
                     </Link>
                 ))}
             </div>

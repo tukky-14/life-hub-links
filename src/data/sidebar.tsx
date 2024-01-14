@@ -46,7 +46,7 @@ export const SIDEBAR_OPTIONS = [
     },
     {
         href: '/gift',
-        label: 'プレゼント',
+        label: 'ギフト',
         proverb: '贈り物は、言葉にできない思いの代弁者。',
         icon: <FaGift />,
     },

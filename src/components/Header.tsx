@@ -15,7 +15,7 @@ const Header = () => {
     return (
         <header className="flex h-16 items-center justify-between border-b border-gray-300 p-4">
             <div className="text-sm italic">{sidebarOption?.proverb}</div>
-            <Button type="button" id="logout" text="ログアウト" onClick={handleLogoutClick} />
+            {/* <Button type="button" id="logout" text="ログアウト" onClick={handleLogoutClick} /> */}
         </header>
     );
 };

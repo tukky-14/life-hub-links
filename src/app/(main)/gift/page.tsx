@@ -1,37 +1,5 @@
+import { GIFT_LINKS } from '@/data/gift';
 import Link from 'next/link';
-
-const GIFT_LINKS = [
-    {
-        title: 'SOW EXPERIENCE',
-        description:
-            '興味はあっても、チャレンジする機会がないコトやモノ。そのきっかけを贈るための体験ギフト。',
-        image: 'https://picsum.photos/300/200',
-        href: 'https://www.sowxp.co.jp/',
-        tag: ['体験'],
-    },
-    {
-        title: 'アソビュー！ギフト',
-        description:
-            '遊び予約サイト。アウトドアスポーツやものづくり体験、遊園地や水族館、日帰り温泉などの遊び体験ギフト。',
-        image: 'https://picsum.photos/300/200',
-        href: 'https://store.asoview.com/',
-        tag: ['体験'],
-    },
-    {
-        title: 'dozo',
-        description: 'dozo',
-        image: 'https://picsum.photos/300/200',
-        href: 'https://dozo-gift.com/',
-        tag: ['食べ物', '体験'],
-    },
-    {
-        title: 'Gifts for pets',
-        description: 'aaaa',
-        image: 'https://picsum.photos/300/200',
-        href: '/',
-        tag: ['食べ物'],
-    },
-];
 
 const Gift = () => {
     return (
@@ -45,7 +13,7 @@ const Gift = () => {
                 >
                     <img className="" src={link.image} alt="サンプル画像" />
                     <p className="p-1">
-                        <span className="block px-2 font-bold">{link.title}</span>
+                        <span className="mb-1 block px-2 font-bold">{link.title}</span>
                         <span className="block px-2 text-xs">{link.description}</span>
                     </p>
                     <p className="absolute bottom-0 p-0.5">

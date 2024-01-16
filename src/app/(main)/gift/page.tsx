@@ -11,7 +11,7 @@ const Gift = () => {
                     key={link.title}
                     target="_blank"
                 >
-                    <img className="" src={link.image} alt="サンプル画像" />
+                    <img className="h-48 w-full" src={link.image} alt="サンプル画像" />
                     <p className="p-1">
                         <span className="mb-1 block px-2 font-bold">{link.title}</span>
                         <span className="block px-2 text-xs">{link.description}</span>

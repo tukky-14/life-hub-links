@@ -8,7 +8,7 @@ const MainLauout = ({ children }: { children: React.ReactNode }) => {
             <Sidebar />
             <div className="flex flex-1 flex-col bg-main text-gray-700">
                 <Header />
-                <main className="flex-1 p-4">{children}</main>
+                <main className="flex-1 overflow-auto p-4">{children}</main>
             </div>
         </div>
     );

@@ -4,7 +4,6 @@ import { ReactNode, ReactElement, createContext, useContext, useState } from 're
 type SidebarOption = {
     href: string;
     label: string;
-    proverb: string;
     icon: ReactElement;
 };
 
@@ -21,7 +20,6 @@ export const SidebarProvider: React.FC<{ children: ReactNode }> = ({ children })
     const [sidebarOption, setSidebarOption] = useState<SidebarOption>({
         href: '/',
         label: '',
-        proverb: '',
         icon: <></>,
     });
 

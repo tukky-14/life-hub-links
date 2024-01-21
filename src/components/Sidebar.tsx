@@ -12,7 +12,7 @@ const Sidebar = () => {
         const { name } = e.currentTarget as HTMLButtonElement;
         const currentOption = SIDEBAR_OPTIONS.find((option) => option.href === name);
 
-        setSidebarOption(currentOption || { href: '', label: '', proverb: '', icon: <></> });
+        setSidebarOption(currentOption || { href: '', label: '', icon: <></> });
         router.push(name);
     };
 

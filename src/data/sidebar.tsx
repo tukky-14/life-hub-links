@@ -1,5 +1,4 @@
 import { FaHome } from 'react-icons/fa';
-import { MdCleaningServices } from 'react-icons/md';
 import { FaCartShopping } from 'react-icons/fa6';
 import { GiCookingPot } from 'react-icons/gi';
 import { MdChildCare } from 'react-icons/md';
@@ -13,12 +12,6 @@ export const SIDEBAR_OPTIONS = [
         label: '住居',
         proverb: '家の中の調和は心の平和をもたらす。',
         icon: <FaHome />,
-    },
-    {
-        href: '/cleaning',
-        label: '掃除',
-        proverb: '環境の整理は心の整理。',
-        icon: <MdCleaningServices />,
     },
     {
         href: '/shopping',

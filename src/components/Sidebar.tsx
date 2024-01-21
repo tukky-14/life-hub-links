@@ -17,7 +17,7 @@ const Sidebar = () => {
     };
 
     return (
-        <aside className="hidden w-48 bg-sidebar py-4 sm:block">
+        <aside className="relative hidden w-48 bg-sidebar py-4 sm:block">
             <h3 className="mb-5 px-4 py-1">
                 <button name="/" className="" onClick={handleSidebarClick}>
                     LifeHub Links
@@ -38,6 +38,7 @@ const Sidebar = () => {
                     </div>
                 </button>
             ))}
+            <small className="absolute bottom-2 left-4">© tukky 2024</small>
         </aside>
     );
 };

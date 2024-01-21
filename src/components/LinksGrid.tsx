@@ -11,7 +11,7 @@ const LinksGrid = (props: LinksGridProps) => {
         <>
             {links.map((link) => (
                 <Link
-                    className="relative h-80 rounded border border-gray-300 duration-300 hover:scale-105"
+                    className="animate-slide-in-bck-center relative h-80 rounded border border-gray-300 duration-300 hover:border hover:border-gray-500 hover:bg-gray-300"
                     href={link.href}
                     key={link.title}
                     target="_blank"

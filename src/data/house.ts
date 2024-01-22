@@ -24,6 +24,13 @@ export const HOUSE_LINKS = [
         tag: ['安全'],
     },
     {
+        title: 'HOMES',
+        description: '日本最大級の不動産・住宅情報サイト',
+        image: 'https://life-hub-links-images.s3.ap-northeast-1.amazonaws.com/house/homes.png',
+        href: 'https://www.homes.co.jp/',
+        tag: ['住宅'],
+    },
+    {
         title: 'ポストマップ',
         description: '郵便ポストの検索',
         image: 'https://life-hub-links-images.s3.ap-northeast-1.amazonaws.com/house/postmap.png',

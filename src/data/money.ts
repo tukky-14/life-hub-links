@@ -16,4 +16,11 @@ export const MONEY_LINKS = [
         href: 'https://www.fsa.go.jp/teach/syakaijin.html',
         tag: [''],
     },
+    {
+        title: 'いろはにマニー',
+        description: '未来のためのお金と投資を学べるサイト。',
+        image: 'https://life-hub-links-images.s3.ap-northeast-1.amazonaws.com/money/irohani.png',
+        href: 'https://www.bridge-salon.jp/money/',
+        tag: [''],
+    },
 ];

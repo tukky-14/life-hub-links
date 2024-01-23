@@ -7,6 +7,7 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import { useState } from 'react';
 import Link from 'next/link';
 import { SIDEBAR_OPTIONS } from '@/data/sidebar';
+import Search from './Search';
 
 const Header = () => {
     const router = useRouter();
@@ -26,6 +27,7 @@ const Header = () => {
             <Link href="/" className="ml-1 pl-4 text-xl font-bold sm:hidden">
                 LifeHub Links
             </Link>
+            <Search />
             <button className="pr-4 sm:hidden" onClick={handleMenuClick}>
                 <RxHamburgerMenu size="2rem" />
             </button>

@@ -1,9 +1,5 @@
-import { Links } from '@/types/links';
+import { LinksGridProps } from '@/types/links';
 import Link from 'next/link';
-
-type LinksGridProps = {
-    links: Links[];
-};
 
 const LinksGrid = (props: LinksGridProps) => {
     const { links } = props;
@@ -11,7 +7,7 @@ const LinksGrid = (props: LinksGridProps) => {
         <>
             {links.map((link) => (
                 <Link
-                    className="animate-slide-in-bck-center relative h-80 rounded border border-gray-300 duration-300 hover:border hover:border-gray-500 hover:bg-gray-300"
+                    className="relative h-80 animate-slide-in-bck-center rounded border border-gray-300 duration-300 hover:border hover:border-gray-500 hover:bg-gray-300"
                     href={link.href}
                     key={link.title}
                     target="_blank"

@@ -1,7 +1,11 @@
-export type Links = {
+export type LinksGridProps = {
+    links: LinkGrid[];
+};
+
+export type LinkGrid = {
+    href: string;
+    image: string;
     title: string;
     description: string;
-    image: string;
-    href: string;
     tag: string[];
 };

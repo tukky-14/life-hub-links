@@ -1,11 +1,13 @@
 import { signOut } from '@/hooks/useAuth';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Search from './Search';
 import MobileMenu from './MobileMenu';
 
 const Header = () => {
     const router = useRouter();
+    const currentPath = usePathname();
+    console.log('currentPath:', currentPath);
 
     const handleLogoutClick = async () => {
         await signOut();
@@ -17,7 +19,7 @@ const Header = () => {
             <Link href="/" className="ml-1 pl-4 text-xl font-bold sm:hidden">
                 LifeHub Links
             </Link>
-            <Search />
+            {currentPath !== '/' && <Search />}
             <MobileMenu />
         </header>
     );

@@ -1,16 +1,6 @@
 'use client';
-import { ReactNode, ReactElement, createContext, useContext, useState } from 'react';
-
-type SidebarOption = {
-    href: string;
-    label: string;
-    icon: ReactElement;
-};
-
-type SidebarContextType = {
-    sidebarOption: SidebarOption | undefined;
-    setSidebarOption: (option: SidebarOption) => void;
-};
+import { SidebarContextType, SidebarOption } from '@/types/sidebar';
+import { ReactNode, createContext, useContext, useState } from 'react';
 
 // コンテキストの作成
 export const SidebarContext = createContext<SidebarContextType | undefined>(undefined);

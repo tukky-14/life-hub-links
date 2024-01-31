@@ -7,7 +7,6 @@ import MobileMenu from './MobileMenu';
 const Header = () => {
     const router = useRouter();
     const currentPath = usePathname();
-    console.log('currentPath:', currentPath);
 
     const handleLogoutClick = async () => {
         await signOut();

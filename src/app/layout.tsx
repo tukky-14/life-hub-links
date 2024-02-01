@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { SidebarProvider } from '@/hooks/useSidebar';
+import { GridDataProvider } from '@/hooks/useGridData';
 
 export const metadata: Metadata = {
     title: 'LifeHub Links',
@@ -12,9 +13,11 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <html lang="ja">
-            <SidebarProvider>
-                <body suppressHydrationWarning={true}>{children}</body>
-            </SidebarProvider>
+            <GridDataProvider>
+                <SidebarProvider>
+                    <body suppressHydrationWarning={true}>{children}</body>
+                </SidebarProvider>
+            </GridDataProvider>
         </html>
     );
 };

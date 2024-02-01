@@ -1,7 +1,7 @@
-import { LinksGridProps } from '@/types/links';
+import { GridDataProps } from '@/types/gridData';
 import Link from 'next/link';
 
-const LinksGrid = (props: LinksGridProps) => {
+const LinksGrid = (props: GridDataProps) => {
     const { links } = props;
     return (
         <>

@@ -3,10 +3,12 @@ import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Search from './Search';
 import MobileMenu from './MobileMenu';
+import { useGridData } from '@/hooks/useGridData';
 
 const Header = () => {
     const router = useRouter();
     const currentPath = usePathname();
+    const { gridData, setGridData } = useGridData();
 
     const handleLogoutClick = async () => {
         await signOut();

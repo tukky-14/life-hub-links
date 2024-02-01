@@ -1,8 +1,10 @@
+import { useGridData } from '@/hooks/useGridData';
 import { GridDataProps } from '@/types/gridData';
 import Link from 'next/link';
 
 const LinksGrid = (props: GridDataProps) => {
     const { links } = props;
+
     return (
         <>
             {links.map((link) => (

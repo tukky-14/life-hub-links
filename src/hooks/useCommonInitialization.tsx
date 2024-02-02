@@ -3,7 +3,7 @@ import { useGridData } from './useGridData';
 import { GridData } from '@/types/gridData';
 
 const useCommonInitialization = (gridData: GridData[]) => {
-    const { setGridData } = useGridData();
+    const { setGridData, setAllGridData } = useGridData();
 
     /**
      * 画面共通の初期化処理
@@ -11,6 +11,7 @@ const useCommonInitialization = (gridData: GridData[]) => {
     useEffect(() => {
         // グリッドデータの格納
         setGridData(gridData);
+        setAllGridData(gridData);
     }, []);
 };
 

@@ -7,6 +7,15 @@ export const GridDataContext = createContext<GridDataContextType | undefined>(un
 
 // コンテキストのプロバイダー
 export const GridDataProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+    const [allGridData, setAllGridData] = useState<GridData[]>([
+        {
+            href: '',
+            image: '',
+            title: '',
+            description: '',
+            tag: [],
+        },
+    ]);
     const [gridData, setGridData] = useState<GridData[]>([
         {
             href: '',
@@ -18,7 +27,7 @@ export const GridDataProvider: React.FC<{ children: ReactNode }> = ({ children }
     ]);
 
     return (
-        <GridDataContext.Provider value={{ gridData, setGridData }}>
+        <GridDataContext.Provider value={{ gridData, setGridData, allGridData, setAllGridData }}>
             {children}
         </GridDataContext.Provider>
     );

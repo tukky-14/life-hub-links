@@ -11,6 +11,8 @@ export type GridData = {
 };
 
 export type GridDataContextType = {
-    gridData: GridData[] | undefined;
+    gridData: GridData[] | [];
+    allGridData: GridData[] | [];
     setGridData: (option: GridData[]) => void;
+    setAllGridData: (option: GridData[]) => void;
 };

@@ -2,41 +2,29 @@
 
 import { SIDEBAR_OPTIONS } from '@/data/sidebar';
 import { useSidebar } from '@/hooks/useSidebar';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const Sidebar = () => {
-    const router = useRouter();
-    const { sidebarOption, setSidebarOption } = useSidebar();
-
-    const handleSidebarClick = (e: React.MouseEvent) => {
-        const { name } = e.currentTarget as HTMLButtonElement;
-        const currentOption = SIDEBAR_OPTIONS.find((option) => option.href === name);
-
-        setSidebarOption(currentOption || { href: '', label: '', icon: <></> });
-        router.push(name);
-    };
+    const { sidebarOption } = useSidebar();
 
     return (
         <aside className="relative hidden w-48 bg-sidebar py-4 sm:block">
             <h3 className="mb-5 px-4 py-1">
-                <button name="/" className="" onClick={handleSidebarClick}>
-                    LifeHub Links
-                </button>
+                <Link href="/">LifeHub Links</Link>
             </h3>
             {SIDEBAR_OPTIONS.map((option) => (
-                <button
+                <Link
                     key={option.href}
-                    name={option.href}
+                    href={option.href}
                     className={`block w-full px-4 py-2 duration-200 hover:bg-gray-600 ${
                         sidebarOption === option ? 'bg-gray-600' : ''
                     }`}
-                    onClick={handleSidebarClick}
                 >
                     <div className="flex items-center gap-1">
                         {option.icon}
                         <p>{option.label}</p>
                     </div>
-                </button>
+                </Link>
             ))}
             <small className="absolute bottom-2 left-4">© tukky 2024</small>
         </aside>

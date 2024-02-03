@@ -6,7 +6,7 @@ const Search = (props: SearchProps) => {
     const { onChange } = props;
 
     return (
-        <div className="ml-4 flex items-center justify-center">
+        <div className="ml-4 hidden items-center justify-center sm:flex">
             <div className="relative">
                 <input
                     type="search"

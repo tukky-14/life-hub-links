@@ -37,5 +37,5 @@ export const SIDEBAR_OPTIONS = [
         label: 'ギフト',
         icon: <FaGift />,
     },
-    { href: '/sweets', label: 'お菓子', icon: <GiChocolateBar /> },
+    // { href: '/sweets', label: 'お菓子', icon: <GiChocolateBar /> },
 ];

@@ -36,7 +36,7 @@ const Login = () => {
 
     return (
         <>
-            <h1 className="mb-4 text-center text-lg font-bold text-indigo-500">ログイン</h1>
+            <h1 className="mb-4 text-center text-lg font-bold text-gray-500">LifeHub Links</h1>
             <form onSubmit={handleSubmit}>
                 <Input
                     type="text"
@@ -58,7 +58,7 @@ const Login = () => {
                     <Button type="submit" id="login" text="ログイン" />
                 </div>
             </form>
-            <div className="pb-2 pt-6 text-center text-indigo-500">
+            <div className="pb-2 pt-6 text-center text-gray-500 hover:underline">
                 <Link href="/signup">ユーザ登録</Link>
             </div>
         </>

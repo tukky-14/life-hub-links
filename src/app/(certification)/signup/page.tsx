@@ -35,7 +35,7 @@ const Register = () => {
 
     return (
         <>
-            <h1 className="mb-4 text-center text-lg font-bold text-indigo-500">ユーザ登録</h1>
+            <h1 className="mb-4 text-center text-lg font-bold text-gray-500">ユーザ登録</h1>
             <form onSubmit={handleSubmit}>
                 <Input
                     type="text"
@@ -65,7 +65,7 @@ const Register = () => {
                     <Button type="submit" id="login" text="登録" />
                 </div>
             </form>
-            <div className="pb-2 pt-6 text-center text-indigo-500">
+            <div className="pb-2 pt-6 text-center text-gray-500">
                 <Link href="/signin">戻る</Link>
             </div>
         </>

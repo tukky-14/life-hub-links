@@ -1,9 +1,11 @@
 import './globals.css';
-import type { Metadata } from 'next';
-import { SidebarProvider } from '@/hooks/useSidebar';
-import { GridDataProvider } from '@/hooks/useGridData';
 import { Suspense } from 'react';
+
+import { GridDataProvider } from '@/hooks/useGridData';
 import { NavigationEvents } from '@/hooks/useNavigation';
+import { SidebarProvider } from '@/hooks/useSidebar';
+
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'LifeHub Links',

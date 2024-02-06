@@ -1,6 +1,6 @@
-import { useGridData } from '@/hooks/useGridData';
-import { GridDataProps } from '@/types/gridData';
 import Link from 'next/link';
+
+import { GridDataProps } from '@/types/gridData';
 
 const LinksGrid = (props: GridDataProps) => {
     const { links } = props;
@@ -20,8 +20,11 @@ const LinksGrid = (props: GridDataProps) => {
                         <span className="block px-2 text-xs">{link.description}</span>
                     </p>
                     <p className="absolute bottom-0 p-0.5">
-                        {link.tag.map((tag) => (
-                            <span className="m-0.5 inline-block rounded border border-gray-300 px-2 py-1 text-xs text-gray-500">
+                        {link.tag.map((tag, index) => (
+                            <span
+                                key={index}
+                                className="m-0.5 inline-block rounded border border-gray-300 px-2 py-1 text-xs text-gray-500"
+                            >
                                 {tag}
                             </span>
                         ))}

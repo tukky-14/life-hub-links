@@ -1,12 +1,13 @@
+import { Amplify } from 'aws-amplify';
 import {
     signIn as signInAmplify,
     signOut as signOutAmplify,
     signUp as signUpAmplify,
 } from 'aws-amplify/auth';
-import { Amplify } from 'aws-amplify';
-import { currentConfig } from '../config/aws';
 import { fetchAuthSession } from 'aws-amplify/auth';
 import { getCurrentUser } from 'aws-amplify/auth';
+
+import { currentConfig } from '../config/aws';
 
 Amplify.configure(currentConfig);
 

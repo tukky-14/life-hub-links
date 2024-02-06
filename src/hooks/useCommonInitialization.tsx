@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
-import { useGridData } from './useGridData';
+
 import { GridData } from '@/types/gridData';
+
+import { useGridData } from './useGridData';
 
 const useCommonInitialization = (gridData: GridData[]) => {
     const { setGridData, setAllGridData } = useGridData();
@@ -12,7 +14,7 @@ const useCommonInitialization = (gridData: GridData[]) => {
         // グリッドデータの格納
         setGridData(gridData);
         setAllGridData(gridData);
-    }, []);
+    }, [gridData, setAllGridData, setGridData]);
 };
 
 export default useCommonInitialization;

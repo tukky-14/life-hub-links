@@ -1,7 +1,8 @@
-import { SIDEBAR_OPTIONS } from '@/data/sidebar';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { RxHamburgerMenu } from 'react-icons/rx';
+
+import { SIDEBAR_OPTIONS } from '@/data/sidebar';
 
 const MobileMenu = () => {
     const router = useRouter();

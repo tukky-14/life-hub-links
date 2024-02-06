@@ -1,9 +1,10 @@
 'use client';
-import { useRouter } from 'next/navigation';
-import { currentAuthenticatedUser, currentSession, signIn } from '@/hooks/useAuth';
 import Link from 'next/link';
-import Input from '@/components/Input';
+import { useRouter } from 'next/navigation';
+
 import Button from '@/components/Button';
+import Input from '@/components/Input';
+import { currentAuthenticatedUser, currentSession, signIn } from '@/hooks/useAuth';
 
 const Login = () => {
     const router = useRouter();

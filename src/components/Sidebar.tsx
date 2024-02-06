@@ -1,8 +1,9 @@
 'use client';
 
+import Link from 'next/link';
+
 import { SIDEBAR_OPTIONS } from '@/data/sidebar';
 import { useSidebar } from '@/hooks/useSidebar';
-import Link from 'next/link';
 
 const Sidebar = () => {
     const { sidebarOption } = useSidebar();

@@ -1,6 +1,7 @@
 'use client';
-import { SidebarContextType, SidebarOption } from '@/types/sidebar';
 import { ReactNode, createContext, useContext, useState } from 'react';
+
+import { SidebarContextType, SidebarOption } from '@/types/sidebar';
 
 // コンテキストの作成
 export const SidebarContext = createContext<SidebarContextType | undefined>(undefined);

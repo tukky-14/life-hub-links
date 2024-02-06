@@ -1,9 +1,11 @@
 'use client';
 
-import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { useSidebar } from './useSidebar';
+import { useEffect } from 'react';
+
 import { SIDEBAR_OPTIONS } from '@/data/sidebar';
+
+import { useSidebar } from './useSidebar';
 
 export const NavigationEvents = () => {
     const pathname = usePathname();
@@ -12,7 +14,7 @@ export const NavigationEvents = () => {
     useEffect(() => {
         const currentOption = SIDEBAR_OPTIONS.find((option) => option.href === pathname);
         setSidebarOption(currentOption || { href: '', label: '', icon: <></> });
-    }, [pathname]);
+    }, [pathname, setSidebarOption]);
 
     return null;
 };

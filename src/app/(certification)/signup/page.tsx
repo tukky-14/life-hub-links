@@ -1,9 +1,10 @@
 'use client';
-import { useRouter } from 'next/navigation';
-import { signUp } from '@/hooks/useAuth';
 import Link from 'next/link';
-import Input from '@/components/Input';
+import { useRouter } from 'next/navigation';
+
 import Button from '@/components/Button';
+import Input from '@/components/Input';
+import { signUp } from '@/hooks/useAuth';
 
 const Register = () => {
     const router = useRouter();

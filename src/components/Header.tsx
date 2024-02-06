@@ -1,21 +1,16 @@
-import { signOut } from '@/hooks/useAuth';
-import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import Search from './Search';
-import MobileMenu from './MobileMenu';
+import { usePathname } from 'next/navigation';
+
 import { useGridData } from '@/hooks/useGridData';
 
+import MobileMenu from './MobileMenu';
+import Search from './Search';
+
 const Header = () => {
-    const router = useRouter();
     const currentPath = usePathname();
-    const { gridData, allGridData, setGridData } = useGridData();
+    const { allGridData, setGridData } = useGridData();
 
-    const handleLogoutClick = async () => {
-        await signOut();
-        router.push('/');
-    };
-
-    const handleSearchChange = (event: any) => {
+    const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const searchValue = event.target.value.toLowerCase();
         const filteredGridData = allGridData?.filter((gridData) => {
             return (

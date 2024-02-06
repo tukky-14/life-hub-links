@@ -1,10 +1,9 @@
 import { FaHome } from 'react-icons/fa';
+import { FaMoneyCheckAlt } from 'react-icons/fa';
+import { FaGift } from 'react-icons/fa';
 import { FaCartShopping } from 'react-icons/fa6';
 import { GiCookingPot } from 'react-icons/gi';
 import { MdChildCare } from 'react-icons/md';
-import { FaMoneyCheckAlt } from 'react-icons/fa';
-import { FaGift } from 'react-icons/fa';
-import { GiChocolateBar } from 'react-icons/gi';
 
 export const SIDEBAR_OPTIONS = [
     {

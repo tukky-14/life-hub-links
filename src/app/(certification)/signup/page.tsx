@@ -2,9 +2,9 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
-import Button from '@/components/Button';
-import Input from '@/components/Input';
-import { signUp } from '@/hooks/useAuth';
+import Button from '@/components/button';
+import Input from '@/components/input';
+import { signUp } from '@/hooks/use-auth';
 
 const Register = () => {
     const router = useRouter();

@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 import { SIDEBAR_OPTIONS } from '@/data/sidebar';
 
-import { useSidebar } from './useSidebar';
+import { useSidebar } from './use-sidebar';
 
 export const NavigationEvents = () => {
     const pathname = usePathname();

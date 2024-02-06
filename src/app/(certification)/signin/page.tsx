@@ -2,9 +2,9 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
-import Button from '@/components/Button';
-import Input from '@/components/Input';
-import { currentAuthenticatedUser, currentSession, signIn } from '@/hooks/useAuth';
+import Button from '@/components/button';
+import Input from '@/components/input';
+import { currentAuthenticatedUser, currentSession, signIn } from '@/hooks/use-auth';
 
 const Login = () => {
     const router = useRouter();

@@ -1,9 +1,9 @@
 import './globals.css';
 import { Suspense } from 'react';
 
-import { GridDataProvider } from '@/hooks/useGridData';
-import { NavigationEvents } from '@/hooks/useNavigation';
-import { SidebarProvider } from '@/hooks/useSidebar';
+import { GridDataProvider } from '@/hooks/use-grid-data';
+import { NavigationEvents } from '@/hooks/use-navigation';
+import { SidebarProvider } from '@/hooks/use-sidebar';
 
 import type { Metadata } from 'next';
 

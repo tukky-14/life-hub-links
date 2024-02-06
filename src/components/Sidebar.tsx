@@ -3,7 +3,7 @@
 import Link from 'next/link';
 
 import { SIDEBAR_OPTIONS } from '@/data/sidebar';
-import { useSidebar } from '@/hooks/useSidebar';
+import { useSidebar } from '@/hooks/use-sidebar';
 
 const Sidebar = () => {
     const { sidebarOption } = useSidebar();

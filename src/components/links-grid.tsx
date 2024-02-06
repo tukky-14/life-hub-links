@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { GridDataProps } from '@/types/gridData';
+import { GridDataProps } from '@/types/grid-data';
 
 const LinksGrid = (props: GridDataProps) => {
     const { links } = props;

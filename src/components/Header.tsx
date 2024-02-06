@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { useGridData } from '@/hooks/useGridData';
+import { useGridData } from '@/hooks/use-grid-data';
 
-import MobileMenu from './MobileMenu';
-import Search from './Search';
+import MobileMenu from './mobile-menu';
+import Search from './search';
 
 const Header = () => {
     const currentPath = usePathname();

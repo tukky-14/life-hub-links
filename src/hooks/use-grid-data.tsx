@@ -1,7 +1,7 @@
 'use client';
 import { ReactNode, createContext, useContext, useState } from 'react';
 
-import { GridDataContextType, GridData } from '@/types/gridData';
+import { GridDataContextType, GridData } from '@/types/grid-data';
 
 // コンテキストの作成
 export const GridDataContext = createContext<GridDataContextType | undefined>(undefined);

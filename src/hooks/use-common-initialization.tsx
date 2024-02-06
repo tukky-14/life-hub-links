@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
-import { GridData } from '@/types/gridData';
+import { GridData } from '@/types/grid-data';
 
-import { useGridData } from './useGridData';
+import { useGridData } from './use-grid-data';
 
 const useCommonInitialization = (gridData: GridData[]) => {
     const { setGridData, setAllGridData } = useGridData();

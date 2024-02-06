@@ -1,8 +1,8 @@
 'use client';
-import LinksGrid from '@/components/LinksGrid';
+import LinksGrid from '@/components/links-grid';
 import { HOUSE_LINKS } from '@/data/house';
-import useCommonInitialization from '@/hooks/useCommonInitialization';
-import { useGridData } from '@/hooks/useGridData';
+import useCommonInitialization from '@/hooks/use-common-initialization';
+import { useGridData } from '@/hooks/use-grid-data';
 
 const House = () => {
     useCommonInitialization(HOUSE_LINKS);

@@ -1,3 +1,4 @@
+/* eslint @typescript-eslint/no-explicit-any: off */
 'use client';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -5,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import Button from '@/components/button';
 import Input from '@/components/input';
 import { currentAuthenticatedUser, currentSession, signIn } from '@/hooks/use-auth';
+import { translateErrorMessage } from '@/lib/cognito';
 
 const Login = () => {
     const router = useRouter();
@@ -28,10 +30,11 @@ const Login = () => {
                 await currentAuthenticatedUser();
                 console.log('isSignedIn:', isSignedIn);
                 console.log('nextStep:', nextStep);
-                router.push('/home');
+                router.push('/');
             }
-        } catch (error) {
+        } catch (error: any) {
             console.log('error signing in', error);
+            alert(translateErrorMessage(error.message));
         }
     };
 

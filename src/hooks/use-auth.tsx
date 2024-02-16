@@ -35,8 +35,10 @@ export async function currentAuthenticatedUser() {
         console.log(`The username: ${username}`);
         console.log(`The userId: ${userId}`);
         console.log(`The signInDetails: ${signInDetails}`);
+        return true;
     } catch (err) {
         console.log(err);
+        return false;
     }
 }
 
@@ -58,10 +60,15 @@ export async function signUp(username: string, password: string, email: string) 
 }
 
 export function useAuth() {
-    // Add your global state management logic here
-    // For example, you can use React Context or a state management library like Redux
-    // Return the authentication state and the signIn function
+    const isAuthenticated = async () => {
+        try {
+            return await currentAuthenticatedUser();
+        } catch (err) {
+            return false;
+        }
+    };
+
     return {
-        isAuthenticated: false, // Replace with your authentication state
+        isAuthenticated,
     };
 }

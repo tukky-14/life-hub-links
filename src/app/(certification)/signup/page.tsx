@@ -1,3 +1,4 @@
+/* eslint @typescript-eslint/no-explicit-any: off */
 'use client';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -5,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import Button from '@/components/button';
 import Input from '@/components/input';
 import { signUp } from '@/hooks/use-auth';
+import { translateErrorMessage } from '@/lib/cognito';
 
 const Register = () => {
     const router = useRouter();
@@ -29,8 +31,9 @@ const Register = () => {
                 await signUp(username, password, email);
                 router.push('/');
             }
-        } catch (error) {
+        } catch (error: any) {
             console.log('error signing up', error);
+            alert(translateErrorMessage(error.message));
         }
     };
 

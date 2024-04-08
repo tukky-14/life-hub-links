@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     description: 'さまざまな生活関連のリンクを中心に集めた情報ハブ。',
     keywords: 'next.js, react, web development',
     appleWebApp: true,
+    manifest: '/manifest.json',
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {

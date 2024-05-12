@@ -10,23 +10,34 @@ import { useSidebar } from '@/hooks/use-sidebar';
 const Sidebar = () => {
     const { sidebarOption } = useSidebar();
 
-    const [isCtrlOrCmdPressed, setIsCtrlOrCmdPressed] = useState(false);
-
+    // キーボードのキーが押されたときの共通処理
     useKeydown();
 
+    // CtrlキーまたはCmdキーが押されているかどうかの状態
+    const [isCtrlOrCmdPressed, setIsCtrlOrCmdPressed] = useState(false);
+
     useEffect(() => {
+        /**
+         * キーボードのキーが押されたときの処理
+         * @param event
+         */
         const handleKeyDown = (event: KeyboardEvent) => {
             if (event.ctrlKey || event.metaKey) {
                 setIsCtrlOrCmdPressed(true);
             }
         };
 
+        /**
+         * キーボードのキーが離されたときの処理
+         * @param event
+         */
         const handleKeyUp = (event: KeyboardEvent) => {
             if (!event.ctrlKey || !event.metaKey) {
                 setIsCtrlOrCmdPressed(false);
             }
         };
 
+        // イベントリスナーを追加
         window.addEventListener('keydown', handleKeyDown);
         window.addEventListener('keyup', handleKeyUp);
 

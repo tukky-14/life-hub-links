@@ -37,4 +37,11 @@ export const HOUSE_LINKS = [
         href: 'https://www.postmap.org/',
         tag: ['安全'],
     },
+    {
+        title: '不動産情報ライブラリ',
+        description: '不動産の基礎知識',
+        image: 'https://life-hub-links-images.s3.ap-northeast-1.amazonaws.com/house/reinfolib.png',
+        href: 'https://www.reinfolib.mlit.go.jp/',
+        tag: ['住宅'],
+    },
 ];

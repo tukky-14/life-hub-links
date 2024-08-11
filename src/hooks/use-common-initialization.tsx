@@ -17,7 +17,7 @@ const useCommonInitialization = (gridData: GridData[]) => {
     useEffect(() => {
         const authCheck = async () => {
             const res = await isAuthenticated();
-            console.log('isAuthenticated:', res);
+            // console.log('isAuthenticated:', res);
             // サインイン中でない場合は、サインイン画面に遷移
             // if (!res) {
             //     router.push('/signin');

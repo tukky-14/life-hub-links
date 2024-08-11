@@ -18,8 +18,7 @@ const Header = () => {
                 gridData.description.toLowerCase().includes(searchValue)
             );
         });
-
-        setGridData(searchValue === '' ? allGridData : filteredGridData || []);
+        setGridData(filteredGridData);
     };
 
     return (

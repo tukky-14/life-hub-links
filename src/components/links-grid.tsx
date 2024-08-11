@@ -9,12 +9,12 @@ const LinksGrid = (props: GridDataProps) => {
         <>
             {links.map((link) => (
                 <Link
-                    className="relative h-80 animate-slide-in-bck-center rounded border border-gray-300 duration-300 hover:border hover:border-gray-500 hover:bg-gray-300"
+                    className="relative h-72 animate-slide-in-bck-center rounded border border-gray-300 duration-300 hover:border hover:border-gray-500 hover:bg-gray-300"
                     href={link.href}
                     key={link.title}
                     target="_blank"
                 >
-                    <img className="h-48 w-full" src={link.image} alt={`${link.title}の画像`} />
+                    <img className="h-40 w-full" src={link.image} alt={`${link.title}の画像`} />
                     <p className="p-1">
                         <span className="mb-1 block px-2 font-bold">{link.title}</span>
                         <span className="block px-2 text-xs">{link.description}</span>
